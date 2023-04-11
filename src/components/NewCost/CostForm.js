@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import CostDate from "../Costs/CostDate";
 import './CostForm.css';
 
 const CostForm = (props) => {
@@ -8,51 +7,17 @@ const CostForm = (props) => {
     const [inputAmount, setInputAmount] = useState('');
     const [inputDate, setInputDate] = useState('');
 
-    // 2-вариант
-    // const [userInput, setUserInput] = useState({
-    //     name: '',
-    //     amount: '',
-    //     date: ''
-    // });
-
     const nameChangeHandler = (event) => {
         setInputName(event.target.value);
-        // 2-вариант
-    //     setUserInput({
-    //         ...userInput,
-    //         name: event.target.value
-    //     })
     };
 
     const amountChangeHandler = (event) => {
-        //1-вариант
         setInputAmount(event.target.value);
-
-        //2-вариант
-        // setUserInput({
-        //     ...userInput,
-        //     amount: event.target.value
-        // })
-
-        //3-вариант
-        // setUserInput((previousState) => {
-        //     return {
-        //         ...previousState,
-        //         name: event.target.value
-        //     }
-        // })
     };
 
     const dateChangeHandler = (event) => {
         setInputDate(event.target.value);
-
-        //2-вариант
-    //     setUserInput({
-    //         ...userInput,
-    //         date: event.target.value
-    //     })
     };
-
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -64,23 +29,12 @@ const CostForm = (props) => {
         };
 
         props.onSaveCostData(costData);
-        setInputName(''); // таким образом мы запишем новое состояние в input
+        setInputName(''); 
         setInputAmount('');
         setInputDate('');
     };
 
-
-    
-    // const [showForm, setShowForm] = useState(false);
-    // const toggleForm = () => {
-    //     setShowForm(!showForm);
-            
-    // }
-
     return (
-            // <div className="new-cost__actions">
-            //     <button type='submit' onClick={toggleForm}>Добавить Новый Расход</button>
-            //     {showForm && (
             <form onSubmit={submitHandler}>
                 <div className="new-cost__controls">
                     <div className="new-cost__control">
