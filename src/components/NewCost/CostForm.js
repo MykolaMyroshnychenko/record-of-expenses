@@ -61,8 +61,6 @@ const CostForm = (props) => {
                     </div>
                 </div>
             </form>
-        //         )}
-        // </div>
     )
 }
 
